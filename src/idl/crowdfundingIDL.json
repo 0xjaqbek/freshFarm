@@ -1,0 +1,1441 @@
+{
+  "address": "7ETsTKTvvjbE89kEQJARuJcUnN18n28Fy972zik2tAnN",
+  "metadata": {
+    "name": "workspace",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "back_campaign_sol",
+      "discriminator": [
+        60,
+        62,
+        214,
+        61,
+        69,
+        194,
+        196,
+        125
+      ],
+      "accounts": [
+        {
+          "name": "campaign",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  97,
+                  109,
+                  112,
+                  97,
+                  105,
+                  103,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign.farmer",
+                "account": "Campaign"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "tier",
+          "writable": true
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign.farmer",
+                "account": "Campaign"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "backing",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  98,
+                  97,
+                  99,
+                  107,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign"
+              },
+              {
+                "kind": "account",
+                "path": "backer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "backer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "tier_id",
+          "type": "u8"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "back_campaign_token",
+      "discriminator": [
+        200,
+        99,
+        118,
+        139,
+        57,
+        113,
+        120,
+        41
+      ],
+      "accounts": [
+        {
+          "name": "campaign",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  97,
+                  109,
+                  112,
+                  97,
+                  105,
+                  103,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign.farmer",
+                "account": "Campaign"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "tier",
+          "writable": true
+        },
+        {
+          "name": "vault_token",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  95,
+                  116,
+                  111,
+                  107,
+                  101,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign.farmer",
+                "account": "Campaign"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "currency_mint"
+        },
+        {
+          "name": "backer_token",
+          "writable": true
+        },
+        {
+          "name": "backing",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  98,
+                  97,
+                  99,
+                  107,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign"
+              },
+              {
+                "kind": "account",
+                "path": "backer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "backer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "tier_id",
+          "type": "u8"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "claim_refund_sol",
+      "discriminator": [
+        8,
+        82,
+        5,
+        144,
+        194,
+        114,
+        255,
+        20
+      ],
+      "accounts": [
+        {
+          "name": "campaign",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  97,
+                  109,
+                  112,
+                  97,
+                  105,
+                  103,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign.farmer",
+                "account": "Campaign"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign.farmer",
+                "account": "Campaign"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "backing",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  98,
+                  97,
+                  99,
+                  107,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign"
+              },
+              {
+                "kind": "account",
+                "path": "backer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "backer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "claim_refund_token",
+      "discriminator": [
+        70,
+        225,
+        166,
+        28,
+        61,
+        62,
+        226,
+        45
+      ],
+      "accounts": [
+        {
+          "name": "campaign",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  97,
+                  109,
+                  112,
+                  97,
+                  105,
+                  103,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign.farmer",
+                "account": "Campaign"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault_token",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  95,
+                  116,
+                  111,
+                  107,
+                  101,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign.farmer",
+                "account": "Campaign"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "currency_mint"
+        },
+        {
+          "name": "backer_token",
+          "writable": true
+        },
+        {
+          "name": "backing",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  98,
+                  97,
+                  99,
+                  107,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign"
+              },
+              {
+                "kind": "account",
+                "path": "backer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "backer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "create_campaign",
+      "discriminator": [
+        111,
+        131,
+        187,
+        98,
+        160,
+        193,
+        114,
+        244
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "config.authority",
+                "account": "Config"
+              }
+            ]
+          }
+        },
+        {
+          "name": "campaign",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  97,
+                  109,
+                  112,
+                  97,
+                  105,
+                  103,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "farmer"
+              },
+              {
+                "kind": "arg",
+                "path": "campaign_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "farmer"
+              },
+              {
+                "kind": "arg",
+                "path": "campaign_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "currency_mint"
+        },
+        {
+          "name": "farmer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "campaign_id",
+          "type": "u64"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "goal_amount",
+          "type": "u64"
+        },
+        {
+          "name": "duration_days",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "create_tier",
+      "discriminator": [
+        64,
+        146,
+        139,
+        178,
+        95,
+        123,
+        94,
+        244
+      ],
+      "accounts": [
+        {
+          "name": "campaign",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  97,
+                  109,
+                  112,
+                  97,
+                  105,
+                  103,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "farmer"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "tier",
+          "writable": true
+        },
+        {
+          "name": "farmer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "tier_id",
+          "type": "u8"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "min_amount",
+          "type": "u64"
+        },
+        {
+          "name": "max_amount",
+          "type": "u64"
+        },
+        {
+          "name": "benefits",
+          "type": "string"
+        },
+        {
+          "name": "max_backers",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "finalize_campaign",
+      "discriminator": [
+        241,
+        76,
+        201,
+        221,
+        33,
+        222,
+        220,
+        138
+      ],
+      "accounts": [
+        {
+          "name": "campaign",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  97,
+                  109,
+                  112,
+                  97,
+                  105,
+                  103,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "campaign.farmer",
+                "account": "Campaign"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "signer": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize_config",
+      "discriminator": [
+        208,
+        127,
+        21,
+        1,
+        194,
+        190,
+        196,
+        70
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "fee_bps",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "withdraw_funds_sol",
+      "discriminator": [
+        25,
+        65,
+        192,
+        167,
+        229,
+        2,
+        74,
+        132
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "config.authority",
+                "account": "Config"
+              }
+            ]
+          }
+        },
+        {
+          "name": "campaign",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  97,
+                  109,
+                  112,
+                  97,
+                  105,
+                  103,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "farmer"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "farmer"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        },
+        {
+          "name": "farmer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "withdraw_funds_token",
+      "discriminator": [
+        98,
+        119,
+        147,
+        50,
+        236,
+        1,
+        55,
+        191
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "config.authority",
+                "account": "Config"
+              }
+            ]
+          }
+        },
+        {
+          "name": "campaign",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  97,
+                  109,
+                  112,
+                  97,
+                  105,
+                  103,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "farmer"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault_token",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  95,
+                  116,
+                  111,
+                  107,
+                  101,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "farmer"
+              },
+              {
+                "kind": "account",
+                "path": "campaign.campaign_id",
+                "account": "Campaign"
+              }
+            ]
+          }
+        },
+        {
+          "name": "currency_mint"
+        },
+        {
+          "name": "farmer_token",
+          "writable": true
+        },
+        {
+          "name": "treasury_token",
+          "writable": true
+        },
+        {
+          "name": "farmer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Backing",
+      "discriminator": [
+        183,
+        154,
+        102,
+        51,
+        83,
+        11,
+        152,
+        65
+      ]
+    },
+    {
+      "name": "Campaign",
+      "discriminator": [
+        50,
+        40,
+        49,
+        11,
+        157,
+        220,
+        229,
+        192
+      ]
+    },
+    {
+      "name": "CampaignTier",
+      "discriminator": [
+        192,
+        78,
+        69,
+        236,
+        132,
+        6,
+        164,
+        241
+      ]
+    },
+    {
+      "name": "Config",
+      "discriminator": [
+        155,
+        12,
+        170,
+        224,
+        30,
+        250,
+        204,
+        130
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "MathOverflow",
+      "msg": "Math overflow occurred"
+    },
+    {
+      "code": 6001,
+      "name": "Unauthorized",
+      "msg": "Unauthorized access"
+    },
+    {
+      "code": 6002,
+      "name": "InvalidFee",
+      "msg": "Invalid fee percentage"
+    },
+    {
+      "code": 6003,
+      "name": "TitleTooLong",
+      "msg": "Title too long (max 64 chars)"
+    },
+    {
+      "code": 6004,
+      "name": "DescriptionTooLong",
+      "msg": "Description too long (max 256 chars)"
+    },
+    {
+      "code": 6005,
+      "name": "NameTooLong",
+      "msg": "Name too long (max 32 chars)"
+    },
+    {
+      "code": 6006,
+      "name": "BenefitsTooLong",
+      "msg": "Benefits too long (max 256 chars)"
+    },
+    {
+      "code": 6007,
+      "name": "InvalidAmount",
+      "msg": "Invalid amount"
+    },
+    {
+      "code": 6008,
+      "name": "InvalidDuration",
+      "msg": "Invalid duration"
+    },
+    {
+      "code": 6009,
+      "name": "InvalidTierRange",
+      "msg": "Invalid tier range"
+    },
+    {
+      "code": 6010,
+      "name": "PlatformInactive",
+      "msg": "Platform is inactive"
+    },
+    {
+      "code": 6011,
+      "name": "CampaignNotActive",
+      "msg": "Campaign is not active"
+    },
+    {
+      "code": 6012,
+      "name": "CampaignFinalized",
+      "msg": "Campaign is already finalized"
+    },
+    {
+      "code": 6013,
+      "name": "CampaignNotStarted",
+      "msg": "Campaign has not started yet"
+    },
+    {
+      "code": 6014,
+      "name": "CampaignEnded",
+      "msg": "Campaign has ended"
+    },
+    {
+      "code": 6015,
+      "name": "CampaignNotEnded",
+      "msg": "Campaign has not ended yet"
+    },
+    {
+      "code": 6016,
+      "name": "CampaignNotFinalized",
+      "msg": "Campaign is not finalized"
+    },
+    {
+      "code": 6017,
+      "name": "CampaignAlreadyFinalized",
+      "msg": "Campaign already finalized"
+    },
+    {
+      "code": 6018,
+      "name": "InvalidTier",
+      "msg": "Invalid tier"
+    },
+    {
+      "code": 6019,
+      "name": "AmountBelowMinimum",
+      "msg": "Amount below minimum"
+    },
+    {
+      "code": 6020,
+      "name": "AmountAboveMaximum",
+      "msg": "Amount above maximum"
+    },
+    {
+      "code": 6021,
+      "name": "TierFull",
+      "msg": "Tier is full"
+    },
+    {
+      "code": 6022,
+      "name": "InvalidMint",
+      "msg": "Invalid mint"
+    },
+    {
+      "code": 6023,
+      "name": "GoalNotReached",
+      "msg": "Goal not reached"
+    },
+    {
+      "code": 6024,
+      "name": "GoalReached",
+      "msg": "Goal was reached, no refunds available"
+    },
+    {
+      "code": 6025,
+      "name": "AlreadyRefunded",
+      "msg": "Already refunded"
+    },
+    {
+      "code": 6026,
+      "name": "NoFundsToWithdraw",
+      "msg": "No funds to withdraw"
+    }
+  ],
+  "types": [
+    {
+      "name": "Backing",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "backer",
+            "type": "pubkey"
+          },
+          {
+            "name": "campaign",
+            "type": "pubkey"
+          },
+          {
+            "name": "tier_id",
+            "type": "u8"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "backed_at",
+            "type": "i64"
+          },
+          {
+            "name": "is_refunded",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Campaign",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "farmer",
+            "type": "pubkey"
+          },
+          {
+            "name": "campaign_id",
+            "type": "u64"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "goal_amount",
+            "type": "u64"
+          },
+          {
+            "name": "raised_amount",
+            "type": "u64"
+          },
+          {
+            "name": "currency_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "start_time",
+            "type": "i64"
+          },
+          {
+            "name": "end_time",
+            "type": "i64"
+          },
+          {
+            "name": "is_active",
+            "type": "bool"
+          },
+          {
+            "name": "is_finalized",
+            "type": "bool"
+          },
+          {
+            "name": "backers_count",
+            "type": "u64"
+          },
+          {
+            "name": "tiers_count",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CampaignTier",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "campaign",
+            "type": "pubkey"
+          },
+          {
+            "name": "tier_id",
+            "type": "u8"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "min_amount",
+            "type": "u64"
+          },
+          {
+            "name": "max_amount",
+            "type": "u64"
+          },
+          {
+            "name": "benefits",
+            "type": "string"
+          },
+          {
+            "name": "max_backers",
+            "type": "u32"
+          },
+          {
+            "name": "current_backers",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Config",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "fee_bps",
+            "type": "u16"
+          },
+          {
+            "name": "total_campaigns",
+            "type": "u64"
+          },
+          {
+            "name": "total_raised",
+            "type": "u64"
+          },
+          {
+            "name": "is_active",
+            "type": "bool"
+          },
+          {
+            "name": "is_paused",
+            "type": "bool"
+          },
+          {
+            "name": "version",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}

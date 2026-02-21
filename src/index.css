@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Fresh Farm Marketplace - Earthy Organic Palette */
+    --background: 45 33% 97%;
+    --foreground: 25 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 25% 15%;
+
+    /* Primary - Fresh Green */
+    --primary: 142 45% 35%;
+    --primary-foreground: 45 33% 97%;
+    --primary-light: 142 45% 45%;
+    --primary-glow: 142 45% 55%;
+
+    /* Secondary - Warm Earth Brown */
+    --secondary: 30 30% 92%;
+    --secondary-foreground: 25 40% 25%;
+
+    /* Muted - Soft Cream */
+    --muted: 40 25% 94%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Accent - Golden Harvest */
+    --accent: 42 85% 55%;
+    --accent-foreground: 25 40% 15%;
+
+    /* Success - Growth Green */
+    --success: 142 60% 40%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning - Sunset Orange */
+    --warning: 28 90% 55%;
+    --warning-foreground: 25 40% 15%;
+
+    /* Destructive */
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 142 45% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom Farm Colors */
+    --farm-green: 142 45% 35%;
+    --farm-green-light: 142 40% 92%;
+    --farm-brown: 25 40% 30%;
+    --farm-brown-light: 30 30% 92%;
+    --farm-gold: 42 85% 55%;
+    --farm-gold-light: 45 80% 92%;
+    --farm-cream: 45 33% 97%;
+    --farm-soil: 20 35% 20%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142 45% 35%) 0%, hsl(142 45% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(142 45% 35%) 0%, hsl(142 50% 28%) 50%, hsl(25 40% 25%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 85% 55%) 0%, hsl(38 90% 50%) 100%);
+    --gradient-earth: linear-gradient(180deg, hsl(45 33% 97%) 0%, hsl(40 25% 94%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(40 25% 98%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(28 90% 55%) 0%, hsl(42 85% 55%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(25 25% 15% / 0.08);
+    --shadow-md: 0 8px 24px -6px hsl(25 25% 15% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(25 25% 15% / 0.15);
+    --shadow-glow: 0 0 40px hsl(142 45% 35% / 0.2);
+    --shadow-gold: 0 8px 32px -8px hsl(42 85% 55% / 0.35);
+
+    /* Sidebar */
+    --sidebar-background: 45 33% 97%;
+    --sidebar-foreground: 25 25% 15%;
+    --sidebar-primary: 142 45% 35%;
+    --sidebar-primary-foreground: 45 33% 97%;
+    --sidebar-accent: 40 25% 94%;
+    --sidebar-accent-foreground: 25 25% 15%;
+    --sidebar-border: 30 20% 88%;
+    --sidebar-ring: 142 45% 35%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Wallet Button Custom Styling */
+  .wallet-adapter-button {
+    background: var(--gradient-primary) !important;
+    border-radius: var(--radius) !important;
+    font-weight: 600 !important;
+    padding: 12px 24px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: none !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+
+  .wallet-adapter-button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-lg), var(--shadow-glow) !important;
+  }
+
+  .wallet-adapter-button-trigger {
+    background: var(--gradient-primary) !important;
+  }
+
+  .wallet-adapter-modal-wrapper {
+    background: hsl(var(--card)) !important;
+    border-radius: calc(var(--radius) * 2) !important;
+  }
+
+  /* Premium Card Styles */
+  .farm-card {
+    background: var(--gradient-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid hsl(var(--border));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .farm-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Badge Styles */
+  .badge-organic {
+    background: hsl(var(--farm-green-light));
+    color: hsl(var(--farm-green));
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .badge-gold {
+    background: hsl(var(--farm-gold-light));
+    color: hsl(var(--farm-brown));
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* Progress Tracker */
+  .tracking-step {
+    position: relative;
+    padding-left: 32px;
+  }
+
+  .tracking-step::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 24px;
+    bottom: -8px;
+    width: 2px;
+    background: hsl(var(--border));
+  }
+
+  .tracking-step:last-child::before {
+    display: none;
+  }
+
+  /* Map Container */
+  .map-container {
+    background: linear-gradient(135deg, hsl(142 40% 92%) 0%, hsl(40 25% 94%) 100%);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Animated Gradient Background */
+  .hero-gradient {
+    background: linear-gradient(-45deg, 
+      hsl(142 45% 35%), 
+      hsl(142 50% 28%), 
+      hsl(25 40% 25%), 
+      hsl(42 85% 55% / 0.8)
+    );
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Floating Animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Pulse Glow */
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(142 45% 35% / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(142 45% 35% / 0.5); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .bg-gradient-earth {
+    background: var(--gradient-earth);
+  }
+
+  .bg-gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+}
